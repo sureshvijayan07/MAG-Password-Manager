@@ -1,0 +1,30 @@
+<section class="bg-gray-50">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen">
+        <span class="self-center text-xl font-semibold mb-8">MAG Password Manager</span>
+        <div class="w-full border-4 border-gray-900 bg-white rounded-lg shadow max-w-md">
+            <div class="p-6 space-y-6">
+                <h1 class="text-2xl font-bold text-gray-900">
+                    Log in to your account
+                </h1>
+                <div *ngIf="isError" class="my-3 bg-red-100 text-red-900">
+                    The Username or Password is Wrong
+                </div>
+                <form #f="ngForm" class="space-y-6" (ngSubmit)="onSubmit(f.value)">
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-gray-900">Username</label>
+                        <input ngModel type="email" name="email" placeholder="name@mail.com"
+                            class="block w-full p-2.5 text-sm bg-gray-50 border-4 border-gray-900 text-gray-900 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-gray-900">Password</label>
+                        <input ngModel type="password" name="password" placeholder="***********"
+                            class="block w-full p-2.5 text-sm bg-gray-50 border-4 border-gray-900 text-gray-900 rounded-lg">
+                    </div>
+                    <button
+                        class="w-full text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign
+                        in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
